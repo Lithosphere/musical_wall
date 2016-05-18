@@ -1,1 +1,8 @@
-<h1>Home Page</h1>
+<a href="/index"><button type="button" class="homepage"><h1>Home Page</h1></button></a>
+
+<% if current_user %>
+  <a href="/log_out"><button type="button" class="homepage"><h1>Log Out</h1></button></a>
+<% else %>
+  <a href="/new_user"><button type="button" class="homepage"><h1>Register</h1></button></a>
+  <a href="/log_in"><button type="button" class="homepage"><h1>Log In</h1></button></a>
+<% end %>

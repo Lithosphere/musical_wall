@@ -3,11 +3,11 @@ source "https://rubygems.org"
 
 gem 'rake'
 gem 'activesupport'
-
+gem 'data_mapper'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
-
+gem 'dm-sqlite-adapter'
 gem 'puma'
 gem 'tux'
 

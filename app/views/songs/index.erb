@@ -1,0 +1,28 @@
+<% @songs.each do |song| %>
+<div class ="song">
+<p>--------------------------------------------</p>
+  <h3><small>BY: <%= song.author %></small></h3>
+  <p>
+  <h3><small>POSTED BY: <%= song.user.username %></small></h3>
+  </p>
+  <p>
+    <a href="/songs/<%= song.id %>"><h3><small>SONG TITLE: <%= song.song_title %></small></h3></a>
+  </p>
+  <p>
+    <h3><small><%= song.created_at %></small></h3>
+  </p>
+  <p>
+  <% if song.url.present? %>
+  <a href ="http://<%= song.url.gsub("https://","") %>">Link to Song</a>
+  <p>
+  </p>
+  <% end %>
+  </p>
+</div>
+
+<% end %>
+<% if current_user %>
+<p>--------------------------------------------</p>
+<div><a href="/songs/new">Post a song... It's Free(for now)!</a></div>
+<% end %>
+<div><a href="/">Back to home</a></div>

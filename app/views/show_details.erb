@@ -1,0 +1,25 @@
+<div>
+  <label>Song URL: </label>
+<p>
+<a href ="http://<%= @song.url.gsub("https://","") %>"><%= @song.song_title %></a>
+</p>
+  <label>Song Original Poster: </label>
+<p>
+  <%= @song.user.username %>
+</p>
+  <label>Upvotes: </label>
+  <%= @song.upvotes %>
+    <% if current_user %>
+      <% if session[:error] == true %>
+        <div><p>you have already upvoted for this song</p></div>
+      <% else %>
+        <p>
+        <form action="/songs/upvote/<%= @song.id %>" method="POST">
+        <input type="submit" value="upvote"/>
+        </form>
+  <% end %>
+<% end %>
+
+</p>
+</p>
+</div>
